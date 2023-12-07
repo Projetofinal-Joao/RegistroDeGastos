@@ -84,3 +84,29 @@ void listarGastos(struct Gasto *gastos, int numGastos) {
 }
 
     return 0;
+
+void editarGasto(struct Gasto *gastos, int numGastos) {
+    char nomeEdit[50];
+    printf("Digite o nome do gasto a ser editado: ");
+    scanf("%s", nomeEdit);
+
+    int encontrado = 0;
+    for (int i = 0; i < numGastos; i++) {
+        if (strcmp(gastos[i].nome, nomeEdit) == 0) {
+            printf("Digite as novas informações do gasto:\n");
+            printf("Nome: ");
+            scanf("%s", gastos[i].nome);
+            printf("Valor: ");
+            scanf("%f", &gastos[i].valor);
+            printf("Data (DD/MM/AAAA): ");
+            scanf("%s", gastos[i].data);
+            printf("Gasto editado com sucesso.\n");
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("Gasto não encontrado.\n");
+    }
+}
