@@ -85,7 +85,116 @@ void listarGastos(struct Gasto *gastos, int numGastos) {
         printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
     }
 }
+void buscarGasto(struct Gasto *gastos, int numGastos) {          
+    printf("Digite o nome do gasto a ser buscado: ");
+    scanf("%s", nomeBusca);
 
+    int encontrado = 0;
+    for (int i = 0; i < numGastos; i++) {
+        if (strcmp(gastos[i].nome, nomeBusca) == 0) {
+            printf("Gasto encontrado:\n");
+            printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
+            printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("Gasto não encontrado.\n");
+    }
+}void buscarGasto(struct Gasto *gastos, int numGastos) {          
+    printf("Digite o nome do gasto a ser buscado: ");
+    scanf("%s", nomeBusca);
+
+    int encontrado = 0;
+    for (int i = 0; i < numGastos; i++) {
+        if (strcmp(gastos[i].nome, nomeBusca) == 0) {
+            printf("Gasto encontrado:\n");
+            printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
+            printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("Gasto não encontrado.\n");
+    }
+}void buscarGasto(struct Gasto *gastos, int numGastos) {          
+    printf("Digite o nome do gasto a ser buscado: ");
+    scanf("%s", nomeBusca);
+
+    int encontrado = 0;
+    for (int i = 0; i < numGastos; i++) {
+        if (strcmp(gastos[i].nome, nomeBusca) == 0) {
+            printf("Gasto encontrado:\n");
+            printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
+            printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("Gasto não encontrado.\n");
+    }
+}void buscarGasto(struct Gasto *gastos, int numGastos) {          
+    printf("Digite o nome do gasto a ser buscado: ");
+    scanf("%s", nomeBusca);
+
+    int encontrado = 0;
+    for (int i = 0; i < numGastos; i++) {
+        if (strcmp(gastos[i].nome, nomeBusca) == 0) {
+            printf("Gasto encontrado:\n");
+            printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
+            printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("Gasto não encontrado.\n");
+    }
+}
+void buscarGasto(struct Gasto *gastos, int numGastos) {          
+    printf("Digite o nome do gasto a ser buscado: ");
+    scanf("%s", nomeBusca);
+
+    int encontrado = 0;
+    for (int i = 0; i < numGastos; i++) {
+        if (strcmp(gastos[i].nome, nomeBusca) == 0) {
+            printf("Gasto encontrado:\n");
+            printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
+            printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("Gasto não encontrado.\n");
+    }
+}void buscarGasto(struct Gasto *gastos, int numGastos) {
+    printf("Digite o nome do gasto a ser buscado: ");
+    scanf("%s", nomeBusca);
+
+    int encontrado = 0;
+    for (int i = 0; i < numGastos; i++) {
+        if (strcmp(gastos[i].nome, nomeBusca) == 0) {
+            printf("Gasto encontrado:\n");
+            printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
+            printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("Gasto não encontrado.\n");
+    }
+} 
     return 0;
 
 void editarGasto(struct Gasto *gastos, int numGastos) {
