@@ -113,3 +113,42 @@ void editarGasto(struct Gasto *gastos, int numGastos) {
         printf("Gasto não encontrado.\n");
     }
 }
+void removerGasto(struct Gasto *gastos, int *numGastos) {         
+    char nomeRemover[50];
+    printf("Digite o nome do gasto a ser removido: ");
+    scanf("%s", nomeRemover);
+
+    int encontrado = 0;
+    for (int i = 0; i < *numGastos; i++) {
+        if (strcmp(gastos[i].nome, nomeRemover) == 0) {
+            // Sobrescrever o gasto a ser removido com o último gasto na lista
+            gastos[i] = gastos[*numGastos - 1];
+            (*numGastos)--;
+            printf("Gasto removido com sucesso.\n");
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("Gasto não encontrado.\n");
+    }
+}
+void salvarEmArquivo(struct Gasto *gastos, int numGastos) {        
+    FILE *arquivo;
+    arquivo = fopen("gastos.txt", "w");
+
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo para escrita.\n");
+        return;
+    }
+
+    for (int i = 0; i < numGastos; i++) {
+        fprintf(arquivo, "%s %.2f %s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
+    }
+
+    fclose(arquivo);
+    printf("Dados salvos em arquivo com sucesso.\n");
+}
+
+
