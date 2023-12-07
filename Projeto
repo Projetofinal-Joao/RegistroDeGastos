@@ -2,11 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Estrutura para armazenar informações sobre um gasto
-struct Gasto {
-    char nome[50];
-    float valor;
+      struct Gasto {char nome[50];float valor;
     char data[20];
+};
 
 void inserirGasto(struct Gasto *gastos, int *numGastos);
 void listarGastos(struct Gasto *gastos, int numGastos);
@@ -17,9 +15,9 @@ void mostrarSomaEMedia(struct Gasto *gastos, int numGastos);
 void salvarEmArquivo(struct Gasto *gastos, int numGastos);
 
 int main() {
-    struct Gasto gastos[100]; // Supondo que haverá no máximo 100 gastos
-    int numGastos = 0;
-    int opcao;
+    struct Gasto gastos[100]; 
+    int numGastos = 0; 
+    int opcao; 
 
     do {
         printf("\nMenu:\n");
@@ -64,9 +62,10 @@ int main() {
         }
     } while (opcao != 0);
 
-  return 0;
+    return 0;
 }
 
+// Função para inserir um novo gasto
 void inserirGasto(struct Gasto *gastos, int *numGastos) {
     printf("Digite o nome do gasto: ");
     scanf("%s", gastos[*numGastos].nome);
@@ -74,10 +73,12 @@ void inserirGasto(struct Gasto *gastos, int *numGastos) {
     scanf("%f", &gastos[*numGastos].valor);
     printf("Digite a data do gasto (DD/MM/AAAA): ");
     scanf("%s", gastos[*numGastos].data);
+    
 
     (*numGastos)++;
 }
 
+// Função para listar todos os gastos
 void listarGastos(struct Gasto *gastos, int numGastos) {
     printf("\nLista de Gastos:\n");
     printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
@@ -85,61 +86,10 @@ void listarGastos(struct Gasto *gastos, int numGastos) {
         printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
     }
 }
-void buscarGasto(struct Gasto *gastos, int numGastos) {          
-    printf("Digite o nome do gasto a ser buscado: ");
-    scanf("%s", nomeBusca);
 
-    int encontrado = 0;
-    for (int i = 0; i < numGastos; i++) {
-        if (strcmp(gastos[i].nome, nomeBusca) == 0) {
-            printf("Gasto encontrado:\n");
-            printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
-            printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
-            encontrado = 1;
-            break;
-        }
-    }
-
-    if (!encontrado) {
-        printf("Gasto não encontrado.\n");
-    }
-}void buscarGasto(struct Gasto *gastos, int numGastos) {          
-    printf("Digite o nome do gasto a ser buscado: ");
-    scanf("%s", nomeBusca);
-
-    int encontrado = 0;
-    for (int i = 0; i < numGastos; i++) {
-        if (strcmp(gastos[i].nome, nomeBusca) == 0) {
-            printf("Gasto encontrado:\n");
-            printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
-            printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
-            encontrado = 1;
-            break;
-        }
-    }
-
-    if (!encontrado) {
-        printf("Gasto não encontrado.\n");
-    }
-}void buscarGasto(struct Gasto *gastos, int numGastos) {          
-    printf("Digite o nome do gasto a ser buscado: ");
-    scanf("%s", nomeBusca);
-
-    int encontrado = 0;
-    for (int i = 0; i < numGastos; i++) {
-        if (strcmp(gastos[i].nome, nomeBusca) == 0) {
-            printf("Gasto encontrado:\n");
-            printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
-            printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
-            encontrado = 1;
-            break;
-        }
-    }
-
-    if (!encontrado) {
-        printf("Gasto não encontrado.\n");
-    }
-}void buscarGasto(struct Gasto *gastos, int numGastos) {          
+// Função para buscar um gasto pelo nome
+void buscarGasto(struct Gasto *gastos, int numGastos) {
+    char nomeBusca[50];
     printf("Digite o nome do gasto a ser buscado: ");
     scanf("%s", nomeBusca);
 
@@ -158,45 +108,8 @@ void buscarGasto(struct Gasto *gastos, int numGastos) {
         printf("Gasto não encontrado.\n");
     }
 }
-void buscarGasto(struct Gasto *gastos, int numGastos) {          
-    printf("Digite o nome do gasto a ser buscado: ");
-    scanf("%s", nomeBusca);
 
-    int encontrado = 0;
-    for (int i = 0; i < numGastos; i++) {
-        if (strcmp(gastos[i].nome, nomeBusca) == 0) {
-            printf("Gasto encontrado:\n");
-            printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
-            printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
-            encontrado = 1;
-            break;
-        }
-    }
-
-    if (!encontrado) {
-        printf("Gasto não encontrado.\n");
-    }
-}void buscarGasto(struct Gasto *gastos, int numGastos) {
-    printf("Digite o nome do gasto a ser buscado: ");
-    scanf("%s", nomeBusca);
-
-    int encontrado = 0;
-    for (int i = 0; i < numGastos; i++) {
-        if (strcmp(gastos[i].nome, nomeBusca) == 0) {
-            printf("Gasto encontrado:\n");
-            printf("%-20s%-10s%-15s\n", "Nome", "Valor", "Data");
-            printf("%-20s%-10.2f%-15s\n", gastos[i].nome, gastos[i].valor, gastos[i].data);
-            encontrado = 1;
-            break;
-        }
-    }
-
-    if (!encontrado) {
-        printf("Gasto não encontrado.\n");
-    }
-} 
-    return 0;
-
+// Função para editar um gasto
 void editarGasto(struct Gasto *gastos, int numGastos) {
     char nomeEdit[50];
     printf("Digite o nome do gasto a ser editado: ");
@@ -222,7 +135,9 @@ void editarGasto(struct Gasto *gastos, int numGastos) {
         printf("Gasto não encontrado.\n");
     }
 }
-void removerGasto(struct Gasto *gastos, int *numGastos) {         
+
+// Função para remover um gasto
+void removerGasto(struct Gasto *gastos, int *numGastos) {
     char nomeRemover[50];
     printf("Digite o nome do gasto a ser removido: ");
     scanf("%s", nomeRemover);
@@ -243,7 +158,9 @@ void removerGasto(struct Gasto *gastos, int *numGastos) {
         printf("Gasto não encontrado.\n");
     }
 }
-void mostrarSomaEMedia(struct Gasto *gastos, int numGastos) {      
+
+// Função para mostrar a soma e a média dos gastos
+void mostrarSomaEMedia(struct Gasto *gastos, int numGastos) {
     float soma = 0;
     for (int i = 0; i < numGastos; i++) {
         soma += gastos[i].valor;
@@ -257,7 +174,8 @@ void mostrarSomaEMedia(struct Gasto *gastos, int numGastos) {
     }
 }
 
-void salvarEmArquivo(struct Gasto *gastos, int numGastos) {        
+// Função para salvar os gastos em um arquivo
+void salvarEmArquivo(struct Gasto *gastos, int numGastos) {
     FILE *arquivo;
     arquivo = fopen("gastos.txt", "w");
 
@@ -273,5 +191,3 @@ void salvarEmArquivo(struct Gasto *gastos, int numGastos) {
     fclose(arquivo);
     printf("Dados salvos em arquivo com sucesso.\n");
 }
-
-
